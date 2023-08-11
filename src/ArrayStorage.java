@@ -3,6 +3,7 @@
  */
 public class ArrayStorage {
     Resume[] storage = new Resume[10000];
+    static int count;
 
     void clear() {
         for (int i = 0; i < storage.length; i++) {
@@ -15,6 +16,7 @@ public class ArrayStorage {
         for (int i = 0; i < storage.length; i++) {
             if (storage[i] == null) {
                 storage[i] = r;
+                count++;
                 break;
             }
         }
@@ -61,12 +63,8 @@ public class ArrayStorage {
     }
 
     int size() {
-        int count = 0;
-        for (Resume resume : storage) {
-            if (resume != null) {
-                count++;
-            }
-        }
         return count;
     }
+
+
 }
