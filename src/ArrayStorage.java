@@ -5,7 +5,7 @@ import java.util.Arrays;
  */
 public class ArrayStorage {
     Resume[] storage = new Resume[10000];
-    static int count;
+    static int count;//
 
     void clear() {
         for (int i = 0; i < storage.length; i++) {
