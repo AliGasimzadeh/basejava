@@ -27,32 +27,32 @@ public class ArrayStorage {
     }
 
     public void save(Resume r) {
-        int Index = getResumeIndex(r.getUuid());
+        int index = getResumeIndex(r.getUuid());
         if (STORAGE_LIMIT <= count) {
             System.out.println("ERROR" + " : " + "Storage is full");
-        } else if (Index != -1) {
+        } else if (index != -1) {
             System.out.println("ERROR" + " : " + "resume has existed yet");
         } else {
             storage[count++] = r;
         }
     }
 
-    public Resume get(String uuid) {
-        int Index = getResumeIndex(uuid);
-        if (Index == -1) {
+    public Object get(String uuid) {
+        int index = getResumeIndex(uuid);
+        if (index == -1) {
             System.out.println("ERROR" + " : " + "resume not found");
+            return null;
         } else {
-            return storage[Index];
+            return storage[index];
         }
-        return null;
     }
 
     public void delete(String uuid) {
-        int Index = getResumeIndex(uuid);
-        if (Index == -1) {
+        int index = getResumeIndex(uuid);
+        if (index == -1) {
             System.out.println("ERROR" + " : " + "resume has not existed");
         } else {
-            storage[Index] = storage[--count];
+            storage[index] = storage[--count];
             storage[count] = null;
         }
     }
