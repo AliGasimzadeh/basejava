@@ -37,7 +37,7 @@ public class ArrayStorage {
         }
     }
 
-    public Object get(String uuid) {
+    public Resume get(String uuid) {
         int index = getResumeIndex(uuid);
         if (index == -1) {
             System.out.println("ERROR" + " : " + "resume not found");
